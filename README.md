@@ -1,6 +1,8 @@
-# whisper_small_chinese
+# ID2223 Lab2 Fine-tuned Whisper with Chinese
 
-Text Transcription using Transformers to our Mother Tongue (Chinese-Mandarin).
+This is the course content of KTH ID2223 HT23 Scalable Machine Learning and Deep Learning. For more information please visit the course webpage: https://id2223kth.github.io/
+
+The task of this lab is to implement Text Transcription using Transformers to our Mother Tongue (Chinese-Mandarin).
 
 ## Interface
 We implemented a user interface ([https://huggingface.co/spaces/PatrickML/Chinese_url_whisper]) through Gradio as a Huggingface Space. The relevant code is in xxxxxxx.ipynb.
