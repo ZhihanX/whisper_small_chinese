@@ -36,5 +36,5 @@ We then split the dataset in the following way, and get much better results.
 common_voice["train"] = load_dataset("mozilla-foundation/common_voice_11_0", "zh-CN", split="train[:30%]+validation[:30%]", use_auth_token=True)
 common_voice["test"] = load_dataset("mozilla-foundation/common_voice_11_0", "zh-CN", split="test[:40%]", use_auth_token=True)
 ```
-And for the dataset, we think we can use other datasets that are pre-trained longer or better than common_voice_11.0, like common_voice_13.0. But for 13.0, there are some problems with using the demo of hugging face, I used the split common_voice_15.0 to train the whisper small model but it works worse.
+We think we can use other datasets that are pre-trained longer or better than common_voice_11.0, like common_voice_13.0. But for 13.0, there are some problems with using the demo of hugging face, I used the split common_voice_15.0 to train the whisper small model but it works worse.
 
