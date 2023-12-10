@@ -24,5 +24,5 @@ We tried several approaches to store the checkpoint. The first method we used wa
 ### Hyperparameter
 There are a lot of parameters in the training_args, I think the most important ones are learning rate, warmup_steps, and max_steps(for different sizes of training and test data). And the per_device_train_batch_size, per_device_eval_batch_size, gradient_accumulation_steps, and fp16 will influence the efficiency of modal, especially training time. And we set evaluation_strategy="epoch" because we want to test the WER (for a language like Chinese it's better to use CER as the metric) of every round the model trains the whole training data. 
 ## Questions
-
+For Task2, we split our code to "whisper_training_pipeline.ipynb" and "whisper_feature_pipeline" which can train via GPU and process data via CPU. And for the
 
