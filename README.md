@@ -12,6 +12,10 @@ We implemented a user interface ([https://huggingface.co/spaces/PatrickML/Chines
 3. Allow the user to upload the audio file and transcribe what it says.
 
 ## Data Processing
+1. Download the dataset from `common_voice_11_0`
+2. Prepare the feature extractor and tokenizer provided by the Whisper model
+3. Apply the data preparation function to all of our training examples using the dataset's `.map` method
+4. Load the processed data to Google Drive
 
 ## Training with Transformers
 ### Checkpoint
