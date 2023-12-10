@@ -29,12 +29,14 @@ There are a lot of parameters in the training_args, I think the most important o
 ## Questions
 For Task2, we split our code to `Hugging_face.ipynb` for UI, `whisper_training_pipeline(3).ipynb` for training via GPU and `whisper_feature_pipeline(1).ipynb` for data processing via CPU. 
 
-### Data Centric
+### Data-Centric
 We first tried with the whole Chinese dataset from common_voice_11. However, due to the large amount, it's hard to train and get bad results (WER = 305).
+
 We then split the dataset in the following way, and get much better results.
 ```python
 common_voice["train"] = load_dataset("mozilla-foundation/common_voice_11_0", "zh-CN", split="train[:30%]+validation[:30%]", use_auth_token=True)
 common_voice["test"] = load_dataset("mozilla-foundation/common_voice_11_0", "zh-CN", split="test[:40%]", use_auth_token=True)
 ```
 We think we can use other datasets that are pre-trained longer or better than common_voice_11.0, like common_voice_13.0. But for 13.0, there are some problems with using the demo of hugging face, I used the split common_voice_15.0 to train the whisper small model but it works worse.
+### Model Centric
 
