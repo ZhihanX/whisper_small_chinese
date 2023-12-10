@@ -8,7 +8,8 @@ The task of this lab is to implement Text Transcription using Transformers to ou
 We implemented a user interface ([https://huggingface.co/spaces/PatrickML/Chinese_url_whisper]) through Gradio as a Huggingface Space. The relevant code is in xxxxxxx.ipynb.
 ### Functionalities
 1. Allow the user to speak into the microphone and transcribe what he/she says
-2. Allow the user to paste in the URL to a video, and transcribe what is spoken in the video
+2. Allow the user to paste in the URL to a video (less than one hour long), and transcribe what is spoken in the video
+3. Allow the user to upload the audio file and transcribe what it says.
 
 ## Data Processing
 
