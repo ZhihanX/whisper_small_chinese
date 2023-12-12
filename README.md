@@ -53,5 +53,7 @@ We think we can use other datasets that are pre-trained longer or better than co
 ### Model Centric
 We first set the step as 4000, but the final result is not good. While we changed the max training step to 2000, the validation results improved.
 
-We also modify the per_device_eval_batch_size and gradient_accumulation_steps from 16, 1 to 8, 2. The training speed improved.
+We also modify the per_device_eval_batch_size and gradient_accumulation_steps. As the batch size increases, the speed at which the model processes the same amount of data during training increases, so the model can converge faster, and it is easy to reach the local optimum. It might help to dynamically set the batch size. In the early period, large batch size promotes the model converge. While a smaller batch size in the later period can improve the accuracy and get better performance. 
+
+
 
