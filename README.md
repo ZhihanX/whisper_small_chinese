@@ -38,6 +38,18 @@ common_voice["train"] = load_dataset("mozilla-foundation/common_voice_11_0", "zh
 common_voice["test"] = load_dataset("mozilla-foundation/common_voice_11_0", "zh-CN", split="test[:40%]", use_auth_token=True)
 ```
 We think we can use other datasets that are pre-trained longer or better than common_voice_11.0, like common_voice_13.0. But for 13.0, there are some problems with using the demo of hugging face, I used the split common_voice_15.0 to train the whisper small model but it works worse.
+
+#### Other aspects due to our assumption
+1. Data Diversity
+
+   Since there are a lot of kinds of accents in Chinese (Mandarin), which is not contained in the current dataset. A diverse dataset helps the model generalize better to different speech sources, accents, speaking rates, and more.
+2. Scenario of the Datasets
+
+   Language varies in different scenarios, e.g., in daily conversation is quite different from in professional scientific fields. Using a dataset containing more domains may improve the ability of generalization. 
+3. Noise and Environments
+
+   Exposure to diverse noise types and environments during training can help the model adapt to real-world scenarios.
+
 ### Model Centric
 We first set the step as 4000, but the final result is not good. While we changed the max training step to 2000, the validation results improved.
 
