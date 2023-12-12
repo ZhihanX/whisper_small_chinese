@@ -39,4 +39,7 @@ common_voice["test"] = load_dataset("mozilla-foundation/common_voice_11_0", "zh-
 ```
 We think we can use other datasets that are pre-trained longer or better than common_voice_11.0, like common_voice_13.0. But for 13.0, there are some problems with using the demo of hugging face, I used the split common_voice_15.0 to train the whisper small model but it works worse.
 ### Model Centric
+We first set the step as 4000, but the final result is not good. While we changed the max training step to 2000, the validation results improved.
+
+We also modify the per_device_eval_batch_size and gradient_accumulation_steps from 16, 1 to 8, 2. The training speed improved.
 
