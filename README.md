@@ -51,9 +51,12 @@ We think we can use other datasets that are pre-trained longer or better than co
    Exposure to diverse noise types and environments during training can help the model adapt to real-world scenarios.
 
 ### Model Centric
-We first set the step as 4000, but the final result is not good. While we changed the max training step to 2000, the validation results improved.
+We adjusted the max training steps. Increasing the max step may cause overfitting and requires more time to train and more powerful computing resources. But less training step may cause underfitting. Due to our assumption, it can achieve better performance when using more training steps, and we need to evaluate more frequently to monitor the training progress to avoid overfitting.
 
 We also modify the per_device_eval_batch_size and gradient_accumulation_steps. As the batch size increases, the speed at which the model processes the same amount of data during training increases, so the model can converge faster, and it is easy to reach the local optimum. It might help to dynamically set the batch size. In the early period, large batch size promotes the model converge. While a smaller batch size in the later period can improve the accuracy and get better performance. 
+
+The learning rate also influence the model performance. When the learning rate is higher, the model converges faster, but may lead to missing the local optimal value. Thus, similar as the batch size setting, it might be helpful to use a dynamic learning rate instead of the fixed ones. Setting the learning rate large at the beginning to accelerate training, and decrease the value in order to find the optimal precisely. 
+
 
 
 
