@@ -30,7 +30,7 @@ There are a lot of parameters in the training_args, I think the most important o
 For Task2, we split our code to `Hugging_face.ipynb` for UI, `whisper_training_pipeline(3).ipynb` for training via GPU and `whisper_feature_pipeline(1).ipynb` for data processing via CPU. 
 
 ### Data-Centric
-We first tried with the whole Chinese dataset from common_voice_11. However, due to the large amount, it's hard to train and get bad results (WER = 305).
+We first tried with the whole Chinese dataset from common_voice_11. However, due to the large amount, it's hard to train and get bad results (WER = 305). (Maybe it overfitted or there were some error during the training)
 
 We then split the dataset in the following way, and get much better results.
 ```python
